@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        /* background-color: red; */
+        /* color: white; */
+        text-align: center;
+      }
+      .div {
+        width: 100%;
+        height: 80vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="div"></div>
+    <div class="footer" id="footer">
+      <img
+        src=""
+        alt=""
+        id="gif_img"
+        style="width: 100%; z-index: 99"
+      />
+    </div>
+
+    <script>
+      document.getElementById("gif_img").style.display = "none";
+      var timer;
+      var stoppedElement = document.getElementById("footer"); // store element for faster access
+
+      function mouseStopped() {
+        // alert('9');
+        // the actual function that is called
+        document.getElementById("gif_img").style.display = "revert";
+        document.getElementById("gif_img").src ='https://raw.githubusercontent.com/Bilalfarooq2461213/fiverrclient/main/sea-horse-onlu.gif';
+      }
+
+      window.addEventListener("mousemove", function () {
+        // alert('0')
+       
+        document.getElementById("gif_img").style.display = "none";
+        document.getElementById("gif_img").src ='';
+      
+        clearTimeout(timer);
+        timer = setTimeout(mouseStopped, 4000);
+      });
+     
+    </script>
+  </body>
+</html>
